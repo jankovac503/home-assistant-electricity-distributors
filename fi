@@ -1,0 +1,28 @@
+units:
+  currency: EUR
+  energy: kWh
+  price_in_cents: true
+grid:
+  - distributor: caruna
+    contract_type: seasonal distribution 
+    default:
+      price: 3.11
+    seasons:
+      - name: winter
+        start: '01.11'
+        end: '31.03'
+        price:
+          default:
+            price: 6.47
+            periods:
+              - start: 22
+                end: 07
+                price: 3.11
+          daily_schedules:
+            - name: weekend
+              days: Sun
+              price: 3.11
+    additional_costs:
+      fixed: 2.79372 # electricity tax + VAT
+#  total:
+
